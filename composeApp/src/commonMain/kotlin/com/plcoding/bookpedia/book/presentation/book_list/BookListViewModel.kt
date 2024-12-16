@@ -15,7 +15,7 @@ class BookListViewModel: ViewModel() {
             is BookListAction.OnBookClick -> {
 
             }
-            is BookListAction.OnSearchQuerySearch -> {
+            is BookListAction.OnSearchQueryChange -> {
                 _state.update {
                     it.copy(searchQuery = action.query)
                 }
