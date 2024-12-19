@@ -66,8 +66,7 @@ fun BookListItem(
         ) {
             Box(
                 modifier = Modifier
-                    .height(100.dp)
-                    .background(Color.Red),
+                    .height(100.dp),
                 contentAlignment = Alignment.Center
             ) {
                 var imageLoadResult by remember {
