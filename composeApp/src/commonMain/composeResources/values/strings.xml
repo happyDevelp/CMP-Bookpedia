@@ -16,9 +16,13 @@
 
     <string name="book_cover">Book cover</string>
     <string name="rating">Rating</string>
-    <string name="Pages">Pages</string>
+    <string name="pages">Pages</string>
     <string name="languages">Languages</string>
     <string name="synopsis">Synopsis</string>
+
     <string name="description_unavailable">Description not available.</string>
+    <string name="description_go_back">Go back</string>
+    <string name="description_mark_as_favorite">Mark as favorite</string>
+    <string name="description_remove_from_favorite">Remove from favorite</string>
 
 </resources>
