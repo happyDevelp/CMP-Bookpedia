@@ -20,6 +20,9 @@ import androidx.navigation.compose.navigation
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.toRoute
 import com.plcoding.bookpedia.book.domain.Book
+import com.plcoding.bookpedia.book.presentation.book_detail.BookDetailAction
+import com.plcoding.bookpedia.book.presentation.book_detail.BookDetailScreenRoot
+import com.plcoding.bookpedia.book.presentation.book_detail.BookDetailViewModel
 import com.plcoding.bookpedia.book.presentation.book_list.BookListScreenRoot
 import com.plcoding.bookpedia.book.presentation.book_list.BookListViewModel
 import com.plcoding.bookpedia.book.presentation.book_list.SelectedBookViewModel
@@ -61,15 +64,21 @@ fun App() {
                 composable<Route.BookDetail> {
                     val selectedBookViewModel =
                         it.sharedKoinViewModel<SelectedBookViewModel>(navController)
+                    val viewModel = koinViewModel<BookDetailViewModel>()
                     val selectedBook by selectedBookViewModel.selectedBook.collectAsStateWithLifecycle()
 
-                    Box(
-                        modifier = Modifier.fillMaxSize(),
-                        contentAlignment = Alignment.Center
-                    ) {
-                        Text(text = "Hello detail screen! " +
-                                "$selectedBook")
+                    LaunchedEffect(selectedBook) {
+                        selectedBook?.let {book ->
+                            viewModel.onAction(BookDetailAction.OnSelectedBookChange(book))
+                        }
                     }
+
+                    BookDetailScreenRoot(
+                        viewModel = viewModel,
+                        onBackClick = {
+                            navController.navigateUp()
+                        }
+                    )
                 }
             }
         }
@@ -77,6 +86,9 @@ fun App() {
     }
 }
 
+// this function return the same viewModel because the viewmodel is tied to a specific graph.
+// Both screens (e.g., BookList and BookDetail) are inside this graph,
+// so they share the same parent graph (NavBackStackEntry).
 @Composable
 private inline fun <reified T: ViewModel> NavBackStackEntry.sharedKoinViewModel(
     navController: NavController

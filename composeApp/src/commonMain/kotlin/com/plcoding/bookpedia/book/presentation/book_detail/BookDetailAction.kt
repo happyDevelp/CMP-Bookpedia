@@ -1,6 +1,5 @@
 package com.plcoding.bookpedia.book.presentation.book_detail
 
-import com.plcoding.bookpedia.app.Route
 import com.plcoding.bookpedia.book.domain.Book
 
 sealed interface BookDetailAction {
