@@ -1,5 +1,7 @@
 package com.plcoding.bookpedia.book.data.mappers
 
+import androidx.room.PrimaryKey
+import com.plcoding.bookpedia.book.data.database.BookEntity
 import com.plcoding.bookpedia.book.data.dto.SearchedBookDto
 import com.plcoding.bookpedia.book.domain.Book
 
@@ -9,8 +11,10 @@ fun SearchedBookDto.toBook(): Book {
         id = id.substringAfterLast('/'),
         title = title,
         imageUrl = if (coverKey != null) {
-            "https://covers.openlibrary.org/b/olid/${coverKey}-L.jpg" }
-        else { "https://covers.openlibrary.org/b/olid/${coverAlternativeKey}-L.jpg" },
+            "https://covers.openlibrary.org/b/olid/${coverKey}-L.jpg"
+        } else {
+            "https://covers.openlibrary.org/b/olid/${coverAlternativeKey}-L.jpg"
+        },
         authors = authorNames ?: emptyList(),
         description = null,
         languages = languages ?: emptyList(),
@@ -19,5 +23,21 @@ fun SearchedBookDto.toBook(): Book {
         ratingCount = ratingsCount,
         numPages = numPagesMedian,
         numEditions = numEditions ?: 0
+    )
+}
+
+fun Book.toBookEntity(): BookEntity {
+    return BookEntity(
+        id = id,
+        title = title,
+        description = description,
+        imageUrl = imageUrl,
+        languages = languages,
+        authors = authors,
+        firstPublicYear = firstPublishYear,
+        ratingAverage = averageRating,
+        ratingCount = ratingCount,
+        numPagesMedianType = numPages,
+        numOfEditions = numEditions
     )
 }
