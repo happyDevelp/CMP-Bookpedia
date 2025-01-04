@@ -63,7 +63,7 @@ fun BookDetailScreenRoot(
 }
 
 @Composable
-private fun BookDetailScreen(
+fun BookDetailScreen(
     state: BookDetailState,
     onAction: (BookDetailAction) -> Unit,
 ) {

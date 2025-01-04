@@ -7,7 +7,10 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
+import com.plcoding.bookpedia.app.Route
 import com.plcoding.bookpedia.book.domain.Book
+import com.plcoding.bookpedia.book.presentation.book_detail.BookDetailScreen
+import com.plcoding.bookpedia.book.presentation.book_detail.BookDetailState
 import com.plcoding.bookpedia.book.presentation.book_list.BookListScreen
 import com.plcoding.bookpedia.book.presentation.book_list.BookListState
 import com.plcoding.bookpedia.book.presentation.book_list.components.BookSearchBar
@@ -39,7 +42,7 @@ private val books = (1..100).map {
         languages = emptyList(),
         firstPublishYear = null,
         averageRating = 4.67893456,
-        ratingCount = 5,
+        ratingCount = 5.0,
         numPages = 100,
         numEditions = 3
     )
@@ -53,5 +56,14 @@ private fun BookListScreenPreview() {
             searchResults = books,
         ),
         onAction = {  }
+    )
+}
+
+@Preview
+@Composable
+private fun BookDetailScreenPreview() {
+    BookDetailScreen(
+        state = BookDetailState(),
+        onAction =  {}
     )
 }

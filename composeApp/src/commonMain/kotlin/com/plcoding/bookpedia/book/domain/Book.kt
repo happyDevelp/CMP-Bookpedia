@@ -9,7 +9,7 @@ data class Book(
     val languages: List<String>,
     val firstPublishYear: String?,
     val averageRating: Double?,
-    val ratingCount: Int?,
+    val ratingCount: Double?,
     val numPages: Int?,
     val numEditions: Int // кількість видань
 )

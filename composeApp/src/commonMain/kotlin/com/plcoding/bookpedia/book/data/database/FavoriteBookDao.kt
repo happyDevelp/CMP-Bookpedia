@@ -12,7 +12,7 @@ interface FavoriteBookDao {
     suspend fun upsert(book: BookEntity)
 
     @Query("select * from BookEntity")
-    suspend fun getFavoriteBook(): Flow<List<BookEntity>>
+    fun getFavoriteBooks(): Flow<List<BookEntity>>
 
     @Query("select * from BookEntity where id = :id")
     suspend fun getFavoriteBook(id: String): BookEntity?
