@@ -21,6 +21,7 @@ import org.koin.dsl.module
 // We must provide an actual implementation of platformModule for each platform (Android, iOS, etc.).
 expect val platformModule: Module
 
+// module for each platform
 val sharedModule = module {
     single { HTTPClientFactory.create(get()) }
     // bind - interface, ::class - specific realisation of interface
