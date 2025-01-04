@@ -49,15 +49,30 @@ By entering the title of any book, a request is made to the Internet (using REST
 
 
 
+*Book list screen on Windows*
+
+<img src="https://github.com/happyDevelp/CMP-Bookpedia/blob/master/readme/screenshots/Book_list(pc_version).png" width="650" height="550">
+
+
+
 *Book detail screen*
 
 <img src="https://github.com/happyDevelp/CMP-Bookpedia/blob/master/readme/screenshots/DetailBookScreen.jpg" width="250" height="550">
 
 
 
+*Book detail screen on Windows*
+
+<img src="https://github.com/happyDevelp/CMP-Bookpedia/blob/master/readme/screenshots/Book_detail(pc_version).png" width="700" height="620">
+
+
+
 *Favorites*
 
 <img src="https://github.com/happyDevelp/CMP-Bookpedia/blob/master/readme/screenshots/Favorite.jpg" width="250" height="550">
+
+
+
 
 
 
@@ -70,7 +85,7 @@ By entering the title of any book, a request is made to the Internet (using REST
 - Ktor 3.0
 - Coil (image loading libraries)
 - Koin DI (Dependency Injection)
-- Kotlin Coroutines 
+- Kotlin Coroutines
 - Room Database
 
 
@@ -80,6 +95,9 @@ By entering the title of any book, a request is made to the Internet (using REST
 2. Open the project in Android Studio.
 3. Run the app on an emulator or physical device.
 
+
+## Additional information
+
 * `/composeApp` is for code that will be shared across your Compose Multiplatform applications.
   It contains several subfolders:
   - `commonMain` is for code that’s common for all targets.
@@ -87,7 +105,7 @@ By entering the title of any book, a request is made to the Internet (using REST
     For example, if you want to use Apple’s CoreCrypto for the iOS part of your Kotlin app,
     `iosMain` would be the right folder for such calls.
 
-* `/iosApp` contains iOS applications. Even if you’re sharing your UI with Compose Multiplatform, 
+* `/iosApp` contains iOS applications. Even if you’re sharing your UI with Compose Multiplatform,
   you need this entry point for your iOS app. This is also where you should add SwiftUI code for your project.
 
 ## Important note
