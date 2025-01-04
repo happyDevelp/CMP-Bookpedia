@@ -1,72 +1,76 @@
 This is a Kotlin Multiplatform project targeting Android, iOS, Desktop.
+This application was developed during the Compose Multiplatform course.
+
 
 # CMP-Bookpedia
 
 Welcome to the Bookpedia app, designed to help you find books and basic information about them
 
-<img src="https://github.com/happyDevelp/Habits_tracker/blob/feature/add-database/image/main_screen_video.gif" width="170" height="350">
+<img src="https://github.com/happyDevelp/CMP-Bookpedia/blob/master/readme/screenshots/BookListScreen.jpg" width="170" height="350">
 
-### The app is still in early development. The final version may look a little different.
 
 ## Overview
 
-
-The Habit Tracker app allows users to monitor their daily habits, set reminders, and visualize their progress. Whether you want to cultivate new habits or break old ones, this app is your personal companion on your journey to self-improvement.
+By entering the title of any book, a request is made to the Internet (using REST API)
 
 ## Features
 
-• Habit Creation: Easily add new habits with customizable settings such as color, icon, and reminders.
+• Searching  books on the Internet.
 
-• Daily Tracking: Mark your habits as done or not done for each day and keep track of your streaks.
+• View detailed information about a book by clicking on it. For example, rating, number of pages, languages in which the book is available and a short description
 
-• Weekly & Monthly Summaries: View your progress through insightful summaries to understand your habit-building journey.
+• Ability to save a book to favorites using databases to access it even without the Internet
 
-• Favorites: Highlight important habits for quick access and motivation.
+• Ability to save a book to favorites using databases to access it even without the Internet
 
-• User-Friendly Interface: Enjoy a smooth and intuitive interface with beautiful animations between screens.
+• Thanks to compose multiplatform the application can be used for android iphone and computer
 
 ## How to Use
 
 1. Launch the App: Start your journey by opening the Habit Tracker app.
 
-2. Create a Habit: Use the "Add Habit" button to set up a new habit with all your desired parameters.
+2. Search a book: Enter the desired book title in the search bar.
 
-3. Track Your Progress: Daily, mark your habits as complete or incomplete.
+3. Detailed information: From the list of suggested books, click on one of them and you will see additional information about this book.
 
-4. View Summaries: Navigate to the summary section to visualize your progress over the week or month.
+4. Favorites: Want to save a book on your device? No problem. Add it to your favorites, and it will be with you even without an internet connection.
 
 ## Screenshots
 
-*Today screen*
+*Demonstration of the application*
 
-<img src="https://github.com/happyDevelp/Habits_tracker/blob/feature/add-database/image/main_screen.jpg" width="250" height="550">
-
-
-
-*History screen*
-
-<img src="https://github.com/happyDevelp/Habits_tracker/blob/feature/add-database/image/history_screen.jpg" width="250" height="550">
+<img src="https://github.com/happyDevelp/CMP-Bookpedia/blob/master/readme/screenshots/app_demo.gif" width="250" height="550">
 
 
 
-*Me screen*
+*Book list screen*
 
-<img src="https://github.com/happyDevelp/Habits_tracker/blob/feature/add-database/image/me_screen.jpg" width="250" height="550">
+<img src="https://github.com/happyDevelp/CMP-Bookpedia/blob/master/readme/screenshots/BookListScreen.jpg" width="250" height="550">
 
 
 
-*Add new habit*
+*Book detail screen*
 
-<img src="https://github.com/happyDevelp/Habits_tracker/blob/feature/add-database/image/add_new_habit.jpg" width="250" height="550">
+<img src="https://github.com/happyDevelp/CMP-Bookpedia/blob/master/readme/screenshots/DetailBookScreen.jpg" width="250" height="550">
+
+
+
+*Favorites*
+
+<img src="https://github.com/happyDevelp/CMP-Bookpedia/blob/master/readme/screenshots/Favorite.jpg" width="250" height="550">
 
 
 
 ## Technologies Used
 
 - Kotlin
-- Android Jetpack Components
-- Android Navigation Components
-- Kotlin Coroutines
+- Compose Multiplatform (Android, IOS, PC)
+- MVI architecture
+- Rest API (Internet query)
+- Ktor 3.0
+- Coil (image loading libraries)
+- Koin DI (Dependency Injection)
+- Kotlin Coroutines 
 - Room Database
 
 
@@ -86,3 +90,6 @@ The Habit Tracker app allows users to monitor their daily habits, set reminders,
 * `/iosApp` contains iOS applications. Even if you’re sharing your UI with Compose Multiplatform, 
   you need this entry point for your iOS app. This is also where you should add SwiftUI code for your project.
 
+## Important note
+
+### I don't have Apple technology, which means I haven't had the opportunity to run and test the app on iOS, so for iPhone users the app may not work
